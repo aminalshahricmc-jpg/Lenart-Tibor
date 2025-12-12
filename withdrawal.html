@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACC Withdrawal</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000814;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .box {
+      background: #111427;
+      padding: 25px;
+      border-radius: 12px;
+      width: 90%;
+      margin: auto;
+      box-shadow: 0 0 12px rgba(255,215,0,0.25);
+    }
+
+    h2 {
+      color: gold;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 5px;
+      background: #1a1f38;
+      color: white;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 15px;
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    /* POPUP */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #111427;
+      padding: 25px;
+      border-radius: 12px;
+      width: 80%;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255,215,0,0.3);
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      background: red;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Zahtjev za Isplatu</h2>
+
+  <div class="box">
+    <p><b>Ime klijenta:</b> Lenart Tibor</p>
+    <p><b>Iznos za isplatu:</b> €10,000</p>
+
+    <label>Odaberite banku</label>
+    <select>
+      <option value="">-- Odaberite banku --</option>
+      <option>Privredna Banka Zagreb (PBZ)</option>
+      <option>Zagrebačka Banka</option>
+      <option>Erste Bank Croatia</option>
+      <option>OTP Banka Hrvatska</option>
+      <option>Raiffeisenbank Hrvatska (RBA)</option>
+      <option>Hrvatska Poštanska Banka (HPB)</option>
+      <option>Addiko Bank</option>
+      <option>Imex Banka</option>
+      <option>Agram Banka</option>
+      <option>Partner Banka</option>
+      <option>Revolut</option>
+      <option>Wise (TransferWise)</option>
+    </select>
+
+    <label>IBAN račun</label>
+    <input type="text" placeholder="HRkk BBBB BBBC CCCC CCCC CCCC">
+
+    <label>Ime vlasnika računa</label>
+    <input type="text" value="Lenart Tibor">
+
+    <button onclick="showPopup()">Nastavi</button>
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3 style="color: gold;">Naknada za isplatu</h3>
+      <p>Za nastavak, potrebno je platiti naknadu u iznosu od: <b>€100</b></p>
+      <button class="close-btn" onclick="closePopup()">Zatvori</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
